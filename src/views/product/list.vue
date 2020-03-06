@@ -1,5 +1,5 @@
 <template>
-    <div class="list_right">
+  <div class="list_right">
       <div class="list_tit"><span><i>◆</i></span>您现在所在的位置：<a href="##">首页</a>&gt;行业资讯</div>
         <div class="product">
           <dl>
@@ -99,17 +99,15 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-
+<style scoped>
 
 </style>

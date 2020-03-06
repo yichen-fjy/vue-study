@@ -23,40 +23,40 @@ export default new Router({
       path: '/news',
       name: 'news',
       component: NewsIndex,
-      children:[
-      	{
-      	  path: 'list',
-      	  name: 'news list',
-      	  component: NewsList
-      	},
-      	{
-      	  path: 'detail/:id',
-      	  name: 'news detail',
-      	  component: NewsDetail
-      	}
+      children: [
+        {//配置一个路由
+          path: 'list',
+          name: 'news list',
+          component: NewsList
+        },
+        {//配置一个路由
+          path: 'detail/:id',
+          name: 'news detail',
+          component: NewsDetail
+        }
       ]
     },
     {//配置一个路由
       path: '/product',
       name: 'product',
       component: ProductIndex,
-      children:[
-      	{
-      	  path: 'list',
-      	  name: 'product list',
-      	  component: ProductList
-      	},
-      	{
-      	  path: 'detail/:id',
-      	  name: 'product detail',
-      	  component: ProductDetail
-      	}
+      children: [
+        {//配置一个路由
+          path: 'list',
+          name: 'product list',
+          component: ProductList
+        },
+        {//配置一个路由
+          path: 'detail/:id',
+          name: 'product detail',
+          component: ProductDetail
+        }
       ]
     },
-    {
+    {//配置一个路由
       path: '/contact',
       name: 'contact',
       component: Contact
-    }
+    },
   ]
 })
