@@ -12,11 +12,11 @@
         </ul>
         <a class="main_L_contact" href="##"><img src="@/assets/img/contact.jpg" width="184" height="70" alt="联系我们" /></a>
         <ul class="main_L_address">
-          <li>联系地址：杭州下载区杭州下载区杭州下载区xxxx3-2-901</li>
-            <li>办公电话：0571-8890Xxxxx</li>
-            <li>联系电话：1360000000000</li>
-            <li>邮政编码：310000</li>
-            <li>电子邮件：xxxxxxks@163.com</li>
+          <li>联系地址：{{ contentData.address }}</li>
+          <li>办公电话：{{ contentData.officeTel }}</li>
+          <li>联系电话：{{ contentData.contactTel }}</li>
+          <li>邮政编码：{{ contentData.postcode }}</li>
+          <li>电子邮件：{{ contentData.email }}</li>
         </ul>
     </div>
     
@@ -25,12 +25,32 @@
 </template>
 
 <script>
+import { getContact } from '@/api/contact';
+
 export default {
   data () {
     return {
-
+      contentData: {},
     }
-  }
+  },
+  created(){
+    this.getContact();
+  },
+  methods: {
+    getContact(){
+      var _this = this;
+      getContact({
+        params: {
+          a: 1
+        },
+      }).then(function(res){
+        console.log(res);
+        _this.contentData = res.data;
+      }).catch(function(err){
+        console.log(err);
+      });
+    },
+  },
 }
 </script>
 

@@ -21,6 +21,31 @@ app.get('/get/contact',function(require,response){
   });
 });
 
+app.get('/get/productlist',function(require,response){
+  //console.log(typeof require.query,require.query);
+  response.json({
+    name: 'BK系列控制变压器',
+    introduce: '适用范围：BK系列控制变压器适用于50Hz-60Hz的交流电路中，  通常用作机床控制电器局部照明灯及指示灯的电源中。',
+  });
+});
+
+app.get('/get/newslist',function(require,response){
+  //console.log(typeof require.query,require.query);
+  response.json({
+  	time: '2013-3-08',
+    content: '江西大于xxxxx深加工产业基地江西大于xxxxx深加工产业基地江西大于xxxxx深加工产业基地',
+  });
+});
+
+app.get('/get/index',function(require,response){
+  //console.log(typeof require.query,require.query);
+  response.json({
+    content: '大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月...',
+    product: '产品电器F0000001号',
+    news: '的说法撒旦发射撒旦撒旦飒沓',
+  });
+});
+
 http.createServer(app).listen(8088,function(){
   console.log('8088启动成功');
 });

@@ -7,7 +7,7 @@
       </div>
       <div class="main_M_intr">
         <img src="@/assets/img/intr.jpg" width="140" height="140" alt="公司简介" />
-          <p>大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月，大余县xxxxxx公司城里于2002年9月...</p>
+          <p>{{ indexData.content }}</p>
       </div>
       <div class="main_tit main_M_tit">
         <h3>产品简介<i>PRODUCTS</i></h3>
@@ -17,19 +17,19 @@
         <div class="main_pro_div">
               <dl>
                   <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品1" /></a></dt>
-                  <dd><a href="##">产品电器F0000001号</a></dd>
+                  <dd><a href="##">{{ indexData.product }}</a></dd>
               </dl>
               <dl>
                   <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品1" /></a></dt>
-                  <dd><a href="##">产品电器F0000001号</a></dd>
+                  <dd><a href="##">{{ indexData.product }}</a></dd>
               </dl>
               <dl>
                   <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品1" /></a></dt>
-                  <dd><a href="##">产品电器F0000001号</a></dd>
+                  <dd><a href="##">{{ indexData.product }}</a></dd>
               </dl>
               <dl>
                   <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品1" /></a></dt>
-                  <dd><a href="##">产品电器F0000001号</a></dd>
+                  <dd><a href="##">{{ indexData.product }}</a></dd>
               </dl>
            </div>
       </div>
@@ -52,24 +52,44 @@
           </ul>
       </div>
       <ul class="main_R_news">
-          <li><i>&gt;</i><a href="##">的说法撒旦发射撒旦撒旦飒沓</a></li>
-          <li><i>&gt;</i><a href="##">的说法撒旦发射撒旦撒旦飒沓</a></li>
-          <li><i>&gt;</i><a href="##">的说法撒旦发射撒旦撒旦飒沓</a></li>
-          <li><i>&gt;</i><a href="##">的说法撒旦发射撒旦撒旦飒沓</a></li>
-          <li><i>&gt;</i><a href="##">的说法撒旦发射撒旦撒旦飒沓</a></li>
-          <li><i>&gt;</i><a href="##">的说法撒旦发射撒旦撒旦飒沓</a></li>
+          <li><i>&gt;</i><a href="##">{{ indexData.news }}</a></li>
+          <li><i>&gt;</i><a href="##">{{ indexData.news }}</a></li>
+          <li><i>&gt;</i><a href="##">{{ indexData.news }}</a></li>
+          <li><i>&gt;</i><a href="##">{{ indexData.news }}</a></li>
+          <li><i>&gt;</i><a href="##">{{ indexData.news }}</a></li>
+          <li><i>&gt;</i><a href="##">{{ indexData.news }}</a></li>
       </ul>
   </div>
 </div>
 </template>
 
 <script>
+import { getIndex } from '@/api/index';
+
 export default {
   data () {
     return {
-
+      indexData: {},
     }
-  }
+  },
+  created(){
+    this.getIndex();
+  },
+  methods: {
+    getIndex(){
+      var _this=this;
+      getIndex({
+        params:{
+          a:1
+        },
+      }).then(function(res){
+        console.log(res);
+        _this.indexData = res.data;
+      }).catch(function(err){
+        console.log(err);
+      });
+    },
+  },
 }
 </script>
 

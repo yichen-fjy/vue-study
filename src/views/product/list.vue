@@ -2,84 +2,60 @@
   <div class="list_right">
       <div class="list_tit"><span><i>◆</i></span>您现在所在的位置：<a href="##">首页</a>&gt;行业资讯</div>
         <div class="product">
-          <dl>
+            <dl>
               <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品" /></a></dt>
                 <dd>
-                  <h4><a href="##">BK系列控制变压器</a></h4>
-                    <p>适用范围：BK系列控制变压器适
- 用于50Hz-60Hz的交流电路中，
- 通常用作机床控制电器局部照明
- 灯及指示灯的电源中。</p>
+                  <h4><a href="##">{{ productListData.name }}</a></h4>
+                    <p>{{ productListData.introduce }}</p>
                 </dd>
             </dl>
             <dl>
               <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品" /></a></dt>
                 <dd>
-                  <h4><a href="##">BK系列控制变压器</a></h4>
-                    <p>适用范围：BK系列控制变压器适
- 用于50Hz-60Hz的交流电路中，
- 通常用作机床控制电器局部照明
- 灯及指示灯的电源中。</p>
+                  <h4><a href="##">{{ productListData.name }}</a></h4>
+                    <p>{{ productListData.introduce }}</p>
                 </dd>
             </dl>
             <dl>
               <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品" /></a></dt>
                 <dd>
-                  <h4><a href="##">BK系列控制变压器</a></h4>
-                    <p>适用范围：BK系列控制变压器适
- 用于50Hz-60Hz的交流电路中，
- 通常用作机床控制电器局部照明
- 灯及指示灯的电源中。</p>
+                  <h4><a href="##">{{ productListData.name }}</a></h4>
+                    <p>{{ productListData.introduce }}</p>
                 </dd>
             </dl>
             <dl>
               <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品" /></a></dt>
                 <dd>
-                  <h4><a href="##">BK系列控制变压器</a></h4>
-                    <p>适用范围：BK系列控制变压器适
- 用于50Hz-60Hz的交流电路中，
- 通常用作机床控制电器局部照明
- 灯及指示灯的电源中。</p>
+                  <h4><a href="##">{{ productListData.name }}</a></h4>
+                    <p>{{ productListData.introduce }}</p>
                 </dd>
             </dl>
             <dl>
               <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品" /></a></dt>
                 <dd>
-                  <h4><a href="##">BK系列控制变压器</a></h4>
-                    <p>适用范围：BK系列控制变压器适
- 用于50Hz-60Hz的交流电路中，
- 通常用作机床控制电器局部照明
- 灯及指示灯的电源中。</p>
+                  <h4><a href="##">{{ productListData.name }}</a></h4>
+                    <p>{{ productListData.introduce }}</p>
                 </dd>
             </dl>
             <dl>
               <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品" /></a></dt>
                 <dd>
-                  <h4><a href="##">BK系列控制变压器</a></h4>
-                    <p>适用范围：BK系列控制变压器适
- 用于50Hz-60Hz的交流电路中，
- 通常用作机床控制电器局部照明
- 灯及指示灯的电源中。</p>
+                  <h4><a href="##">{{ productListData.name }}</a></h4>
+                    <p>{{ productListData.introduce }}</p>
                 </dd>
             </dl>
             <dl>
               <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品" /></a></dt>
                 <dd>
-                  <h4><a href="##">BK系列控制变压器</a></h4>
-                    <p>适用范围：BK系列控制变压器适
- 用于50Hz-60Hz的交流电路中，
- 通常用作机床控制电器局部照明
- 灯及指示灯的电源中。</p>
+                  <h4><a href="##">{{ productListData.name }}</a></h4>
+                    <p>{{ productListData.introduce }}</p>
                 </dd>
             </dl>
             <dl>
               <dt><a href="##"><img src="@/assets/img/1.jpg" width="125" height="125" alt="产品" /></a></dt>
                 <dd>
-                  <h4><a href="##">BK系列控制变压器</a></h4>
-                    <p>适用范围：BK系列控制变压器适
- 用于50Hz-60Hz的交流电路中，
- 通常用作机床控制电器局部照明
- 灯及指示灯的电源中。</p>
+                  <h4><a href="##">{{ productListData.name }}</a></h4>
+                    <p>{{ productListData.introduce }}</p>
                 </dd>
             </dl>
         </div>
@@ -98,12 +74,32 @@
 </template>
 
 <script>
+import { getProductList } from '@/api/productlist';
+
 export default {
   data () {
     return {
-
+      productListData: {},
     }
-  }
+  },
+  created(){
+    this.getProductList();
+  },
+  methods: {
+    getProductList(){
+      var _this=this;
+      getProductList({
+        params:{
+          a:1
+        },
+      }).then(function(res){
+        console.log(res);
+        _this.productListData = res.data;
+      }).catch(function(err){
+        console.log(err);
+      });
+    },
+  },
 }
 </script>
 

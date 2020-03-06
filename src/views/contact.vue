@@ -8,7 +8,7 @@
             <li>联系地址：{{ contentData.address }}</li>
               <li>办公电话：{{ contentData.officeTel }}</li>
               <li>联系电话：{{ contentData.contactTel }}</li>
-              <li>邮政编码：{{ contentData.postcode }}0</li>
+              <li>邮政编码：{{ contentData.postcode }}</li>
               <li>电子邮件：{{ contentData.email }}</li>
           </ul>
       </div>
